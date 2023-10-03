@@ -1,5 +1,5 @@
 import React from 'react'
-import PosterImage from '../assests/Poster_Image .jpg'
+// import PosterImage from '../assests/Poster_Image .jpg'
 import StoryImage from '../assests/Story_Image.jpg'
 
 const Share = () => {
