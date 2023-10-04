@@ -7,11 +7,14 @@ const Share = () => {
     const handleShare = () => {
         console.log("Share button clicked!")
 
+
+        let files = [StoryImage]
+
         let shareData = {
             title: "Web Share API",
             text: "Web Share API in ReactJS Example in Github",
             url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
-            file: [StoryImage],
+            files,
         }
 
         navigator.share(shareData)
