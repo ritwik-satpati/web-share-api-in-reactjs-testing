@@ -26,7 +26,7 @@ const Share = () => {
         const shareData = {
             // title: title,
             files: files,
-            url: "",
+            // url: "",
             text: textWithUrl,
             // text: text,
         }
