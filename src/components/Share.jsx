@@ -19,7 +19,7 @@ const Share = () => {
         const blob = await response.blob();
 
         const files = [
-            new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
+            new File([blob], 'Story_Image.jpg', { type: 'image/jpg' }),
         ]
 
         // Setting Share-Dataset with Files 
