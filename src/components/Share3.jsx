@@ -1,17 +1,42 @@
 import React from 'react'
+import StoryImage from '../assests/Story_Image.jpg'
+
 
 const Share3 = () => {
 
     const handleShare = async () => {
-        try {
-            await navigator.share({
+
+
+        // Load the image and convert it to a Blob
+        const response = await fetch(StoryImage);
+        const blob = await response.blob();
+
+        const filesArray = [
+            new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
+        ]
+
+        if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+            navigator.share({
+                files: filesArray,
                 title: 'Web Share API',
                 text: 'Web Share API in ReactJS Example in Github',
                 url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
             })
-        } catch (err) {
-            console.log(err)
+                .then(() => console.log('Share was successful.'))
+                .catch((error) => console.log('Sharing failed', error));
+        } else {
+            console.log(`Your system doesn't support sharing files.`);
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Web Share API',
+                    text: 'Web Share API in ReactJS Example in Github',
+                    url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+                })
+                    .then(() => console.log('Successful share'))
+                    .catch((error) => console.log('Error sharing', error));
+            }
         }
+
     }
 
     return (
