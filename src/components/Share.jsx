@@ -36,9 +36,9 @@ const Share = () => {
         } else {
             // Setting Share-Dataset without Files 
             const shareData = {
-                title,
-                text: `${text} - ${url}`,
-                files,
+                title: title,
+                url: `${text} - ${url}`,
+                files: files,
             }
             // Sharing the Share-Dataset without Files
             await navigator.share(shareData)
