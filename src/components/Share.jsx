@@ -1,23 +1,45 @@
 import React from 'react'
-// import PosterImage from '../assests/Poster_Image .jpg'
 import StoryImage from '../assests/Story_Image.jpg'
+// import PosterImage from '../assests/Poster_Image .jpg'
 
 const Share = () => {
 
-    const handleShare = () => {
+    const handleShare = async () => {
+
         console.log("Share button clicked!")
 
+        // Load the image and convert it to a Blob
+        const response = await fetch(StoryImage);
+        const blob = await response.blob();
 
-        let files = [StoryImage]
+        const files = [
+            new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
+        ]
 
-        let shareData = {
-            title: "Web Share API",
-            text: "Web Share API in ReactJS Example in Github",
-            url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
-            files,
+        // Checking canShare for Files
+        if (navigator.canShare(files)) {
+            // Setting Share-Dataset with Files 
+            const shareDataWithFiles = {
+                title: "Web Share API",
+                text: "Web Share API in ReactJS Example in Github",
+                url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+            }
+            // Sharing the Share-Dataset with Files
+            await navigator.share(shareDataWithFiles)
+            console.log("Shared with Files!")
+        } else {
+            // Setting Share-Dataset without Files 
+            const shareData = {
+                title: "Web Share API",
+                text: "Web Share API in ReactJS Example in Github",
+                url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+                files,
+            }
+            // Sharing the Share-Dataset without Files
+            await navigator.share(shareData)
+            console.log("Shared without Files!")
         }
 
-        navigator.share(shareData)
     }
 
     return (
