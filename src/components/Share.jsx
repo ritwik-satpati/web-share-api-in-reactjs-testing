@@ -10,7 +10,7 @@ const Share = () => {
 
         const title = "Web Share API"
         const text = "Web Share API in ReactJS Example in Github"
-        const url = "https://github.com/ritwik-satpati/web-share-api-in-reactjs"
+        // const url = "https://github.com/ritwik-satpati/web-share-api-in-reactjs"
 
         // Load the image and convert it to a Blob
         const response = await fetch(StoryImage);
@@ -24,6 +24,7 @@ const Share = () => {
         const shareData = {
             title: title,
             text: text,
+            // url: url,
             files: files,
         }
         // Sharing the Share-Dataset with Files
