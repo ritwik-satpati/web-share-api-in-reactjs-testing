@@ -26,9 +26,9 @@ const Share = () => {
         if (navigator.canShare(files)) {
             // Setting Share-Dataset with Files 
             const shareDataWithFiles = {
-                title: "Web Share API",
-                text: "Web Share API in ReactJS Example in Github",
-                url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+                title: title,
+                text: text,
+                url: url,
             }
             // Sharing the Share-Dataset with Files
             await navigator.share(shareDataWithFiles)
@@ -37,7 +37,8 @@ const Share = () => {
             // Setting Share-Dataset without Files 
             const shareData = {
                 title: title,
-                url: `${text} - ${url}`,
+                text: text,
+                url: url,
                 files: files,
             }
             // Sharing the Share-Dataset without Files
