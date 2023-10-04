@@ -1,5 +1,5 @@
 import React from 'react'
-import StoryImage from '../assests/Story_Image.jpg'
+// import StoryImage from '../assests/Story_Image.jpg'
 // import PosterImage from '../assests/Poster_Image .jpg'
 
 const Share = () => {
@@ -8,24 +8,24 @@ const Share = () => {
 
         console.log("Share button clicked!")
 
-        const title = "Web Share API"
+        // const title = "Web Share API"
         const text = "Web Share API in ReactJS Example in Github"
         // const url = "https://github.com/ritwik-satpati/web-share-api-in-reactjs"
 
         // Load the image and convert it to a Blob
-        const response = await fetch(StoryImage);
-        const blob = await response.blob();
+        // const response = await fetch(StoryImage);
+        // const blob = await response.blob();
 
-        const files = [
-            new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
-        ]
+        // const files = [
+            // new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
+        // ]
 
         // Setting Share-Dataset with Files 
         const shareData = {
-            title: title,
+            // title: title,
             text: text,
             // url: url,
-            files: files,
+            // files: files,
         }
         // Sharing the Share-Dataset with Files
 
