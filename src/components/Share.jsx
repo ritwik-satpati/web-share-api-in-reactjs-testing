@@ -7,7 +7,7 @@ const Share = () => {
 
         console.log("Share button clicked!")
 
-        // const title = "Web Share API"
+        const title = "Web Share API"
         const text = "Web Share API in ReactJS Example in Github"
         const url = "https://github.com/ritwik-satpati/web-share-api-in-reactjs"
 
@@ -24,11 +24,10 @@ const Share = () => {
 
         // Setting Share-Dataset with Files 
         const shareData = {
-            // title: title,
-            files: files,
+            title: title,
+            text: text,
             url: url,
-            caption: text,
-            // text: text,
+            files: files,
         }
         // Sharing the Share-Dataset with Files
 
