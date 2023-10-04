@@ -1,5 +1,5 @@
 import React from 'react'
-// import StoryImage from '../assests/Story_Image.jpg'
+import StoryImage from '../assests/Story_Image.jpg'
 
 
 const Share = () => {
@@ -16,13 +16,11 @@ const Share = () => {
         // console.log(textWithUrl)
 
         // Load the image and convert it to a Blob
-        // const response = await fetch(StoryImage);
-        const response = await fetch(text);
+        const response = await fetch(StoryImage);
         const blob = await response.blob();
 
         const files = [
-            // new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
-            new File([blob], text, { type: 'text/plain' })
+            new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
         ]
 
         // Setting Share-Dataset with Files 
