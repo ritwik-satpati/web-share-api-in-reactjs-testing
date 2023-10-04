@@ -8,6 +8,12 @@ const Share = () => {
 
         console.log("Share button clicked!")
 
+        const title = "Web Share API"
+        const text = "Web Share API in ReactJS Example in Github"
+        const url = "https://github.com/ritwik-satpati/web-share-api-in-reactjs"
+                
+        console.log(`${text} - ${url}`)
+        
         // Load the image and convert it to a Blob
         const response = await fetch(StoryImage);
         const blob = await response.blob();
@@ -30,9 +36,8 @@ const Share = () => {
         } else {
             // Setting Share-Dataset without Files 
             const shareData = {
-                title: "Web Share API",
-                text: "Web Share API in ReactJS Example in Github",
-                url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+                title,
+                text: `${text} - ${url}`,
                 files,
             }
             // Sharing the Share-Dataset without Files
