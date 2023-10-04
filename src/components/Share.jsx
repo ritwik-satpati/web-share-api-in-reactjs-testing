@@ -24,9 +24,9 @@ const Share = () => {
         // Setting Share-Dataset with Files 
         const shareData = {
             title: title,
+            files: files,
             url: url,
             text: text,
-            files: files,
         }
         // Sharing the Share-Dataset with Files
 
