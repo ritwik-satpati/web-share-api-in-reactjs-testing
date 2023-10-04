@@ -1,44 +1,29 @@
 // npm install react react-dom
-// npm install @ionic/react
 // npm install @capacitor/core
-// npm install ionicons
 // npx cap sync                 ==> Not Installing
 
 import React from 'react';
-import {
-  IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
-  IonButton, IonList, IonItem
-} from '@ionic/react';
-import { Plugins } from '@capacitor/core';
+import { Share } from '@capacitor/share';
 
-const { Share } = Plugins;
-
-const Tab1 = () => {
-  const shareRet = async () => {
+const Share2 = () => {
+  
+  const handleShare = async () => {
     await Share.share({
-      title: 'See cool stuff',
-      text: 'Really awesome thing you need to see right meow',
-      url: 'http://ionicframework.com/',
-      dialogTitle: 'Share with buddies'
+      
+      title: 'Web Share API',
+      text: 'Web Share API in ReactJS Example in Github',
+      url: "https://github.com/ritwik-satpati/web-share-api-in-reactjs",
+      dialogTitle: 'Share with friends'
     });
   };
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Share Examples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>
-            <IonButton onClick={() => shareRet()}>share</IonButton>
-          </IonItem>
-        </IonList>
-      </IonContent>
-    </IonPage>
+    <div className='h-[100vh] w-full flex items-center justify-center'>
+      <div className='h-[40px] min-w-[50px] flex items-center justify-center space-x-2 border border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 font-Roboto text-center cursor-pointer py-2 px-5 rounded-sm' onClick={handleShare}>
+        Share
+      </div>
+    </div>
   );
 };
 
-export default Tab1;
+export default Share2;

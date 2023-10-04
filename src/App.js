@@ -1,9 +1,9 @@
-import Share3 from './components/Share3';
+import Share2 from './components/Share2';
 
 function App() {
   return (
     <div className="App">
-      <Share3 />
+      <Share2 />
     </div>
   );
 }
