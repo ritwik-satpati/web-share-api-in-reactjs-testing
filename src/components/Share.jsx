@@ -1,6 +1,7 @@
 import React from 'react'
 import StoryImage from '../assests/Story_Image.jpg'
 
+
 const Share = () => {
 
     const handleShare = async () => {
@@ -19,7 +20,8 @@ const Share = () => {
         const blob = await response.blob();
 
         const files = [
-            new File([blob], 'Story_Image.jpg', { type: 'image/jpg' }),
+            // new File([blob], 'Story_Image.jpg', { type: 'image/jpeg' }),
+            new File([blob], 'Text', { type: 'text/plain' })
         ]
 
         // Setting Share-Dataset with Files 
